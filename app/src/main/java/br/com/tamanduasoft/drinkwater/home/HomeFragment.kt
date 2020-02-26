@@ -36,14 +36,15 @@ class HomeFragment : Fragment() {
     private fun setupStateListener() {
         viewModel.state.observe(viewLifecycleOwner, Observer { homeState ->
             homeState?.let {
-                textObjectivePercentage.text = String.format("%.1f", it.progress)
+                textObjectivePercentage.text = getString(R.string.objective_accomplished_percentage, it.progress)
+                textDetailedObjectivePercentage.text = getString(R.string.detailed_objective, it.accomplished, it.objective, it.pending)
             }
         })
     }
 
     private fun setupActionsListener() {
         viewModel.action.observe(viewLifecycleOwner, Observer {
-            when(it) {
+            when (it) {
                 is HomeAction.ShowDrinkingOptions -> TODO()
             }
         })

@@ -1,6 +1,7 @@
 package br.com.tamanduasoft.drinkwater
 
 import android.app.Application
+import br.com.tamanduasoft.drinkwater.home.homeKoinModule
 import com.jakewharton.threetenabp.AndroidThreeTen
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -19,7 +20,7 @@ class DrinkWaterApp : Application() {
             androidContext(this@DrinkWaterApp)
             modules(
                 listOf(
-
+                    homeKoinModule
                 )
             )
         }

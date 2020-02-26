@@ -15,7 +15,12 @@ class HomeViewModel : ViewModel() {
     val action = _action as LiveData<HomeAction>
 
     fun getInformation() {
-
+        _state.value = HomeState(
+            progress = 40,
+            objective = "4L",
+            accomplished = "1,3L",
+            pending = "2,7L"
+        )
     }
 
     fun onAddClicked() {
