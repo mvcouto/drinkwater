@@ -2,4 +2,6 @@
     <string name="app_name">Drink Water</string>
     <string name="objective_accomplished_percentage">%d%%</string>
     <string name="detailed_objective">You drank %s of your %s objective! Still %s to go…</string>
+    <string name="how_much_water_did_you_drink">How much water did you drink?</string>
+    <string name="select">Select</string>
 </resources>

@@ -1,10 +1,12 @@
 package br.com.tamanduasoft.drinkwater.domain
 
+import br.com.tamanduasoft.drinkwater.domain.repository.DrinksRepository
+
 class DrinkWaterInteractor(
-    private val drinkingHistoryRepository: DrinkingHistoryRepository
+    private val drinksRepository: DrinksRepository
 ) {
 
-    suspend fun execute(drink: Drink) {
+    suspend fun execute(drinkLog: Drink) {
 
     }
 }

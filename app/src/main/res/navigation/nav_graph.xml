@@ -6,5 +6,5 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="br.com.tamanduasoft.drinkwater.home.HomeFragment" />
+        android:name="br.com.tamanduasoft.drinkwater.features.home.HomeFragment" />
 </navigation>

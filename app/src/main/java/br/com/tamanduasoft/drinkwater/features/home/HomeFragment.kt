@@ -1,4 +1,4 @@
-package br.com.tamanduasoft.drinkwater.home
+package br.com.tamanduasoft.drinkwater.features.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import br.com.tamanduasoft.drinkwater.R
-import br.com.tamanduasoft.drinkwater.home.model.HomeAction
+import br.com.tamanduasoft.drinkwater.domain.Cup
+import br.com.tamanduasoft.drinkwater.features.home.model.HomeAction
+import br.com.tamanduasoft.drinkwater.features.selection.CupSelectionFragment
 import kotlinx.android.synthetic.main.home_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -45,8 +47,14 @@ class HomeFragment : Fragment() {
     private fun setupActionsListener() {
         viewModel.action.observe(viewLifecycleOwner, Observer {
             when (it) {
-                is HomeAction.ShowDrinkingOptions -> TODO()
+                is HomeAction.ShowDrinkingOptions -> showCupSelectionScreen(it.cups)
             }
         })
+    }
+
+    private fun showCupSelectionScreen(cups: List<Cup>) {
+        CupSelectionFragment.newInstance(cups)
+            .also { it.onCupSelectedListener = { cup -> viewModel.onCupSelected(cup)} }
+            .showNow(childFragmentManager, CupSelectionFragment::class.java.name)
     }
 }

@@ -1,6 +1,6 @@
-package br.com.tamanduasoft.drinkwater.home.model
+package br.com.tamanduasoft.drinkwater.features.home.model
 
-data class HomeState(
+data class HomeViewState(
     val progress: Int,
     val objective: String,
     val accomplished: String,
